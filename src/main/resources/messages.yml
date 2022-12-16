@@ -1,0 +1,7 @@
+# Messages for Taxes Plugin
+# Need Support? Join the Discord Server: https://discord.gg/MfR5mcpVfX
+
+General:
+  No-Permission: "%prefix% &cYou do not have permission to run this command."
+  Reload: "%prefix% &aConfigs Reloaded."
+  Invalid-Syntax: "%prefix% &cInvalid Syntax."

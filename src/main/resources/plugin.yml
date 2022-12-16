@@ -1,0 +1,16 @@
+name: Taxes
+version: '${project.version}'
+main: me.prism3.taxes.Main
+api-version: 1.13
+authors: [ Prism3 ]
+description: Keep your players active by doing their job / quests in order to pay their bills!
+website: https://prism3.me
+commands:
+  taxes:
+    description: Plugin command
+  taxes reload:
+    description: Reloads the plugin config.
+permissions:
+  taxes.admin:
+    description: Allows the user to reload the plugin's config
+    default: op

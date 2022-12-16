@@ -1,0 +1,39 @@
+# /////////////////////////////////////////////////////////////
+# /                                                           /
+# /                       Taxes Plugin                        /
+# /                                                           /
+# /////////////////////////////////////////////////////////////
+#
+# Thank you for using Taxes Plugin! If you are experiencing any issues
+# or have any suggestions / features you want to be implemented into the plugin
+# feel free to join the support Discord Server!
+#
+# Spigot: Prism3
+# Discord: Prism3#9371 ID: 403667971089760257
+# Discord Server: https://discord.gg/MfR5mcpVfX
+
+# Server Name
+Server-Name: "Server_Name"
+
+# Plugin's Prefix
+Plugin-Prefix: "&6Taxes &8&l|&r"
+
+# Log all Taxes Interactions
+Log-Interactions: true
+
+# Database Settings
+# Data-Deletion Value in Days, Set it -1 to cancel
+Database:
+  Enable: false
+  Host: localhost
+  Port: 3306
+  Username: username
+  Password: PassworD
+  Database: database
+  Data-Deletion: 7
+
+# SQLite Feature
+# Data-Deletion Value in Days, Set it -1 to cancel
+SQLite:
+  Enable: false
+  Data-Deletion: 7
