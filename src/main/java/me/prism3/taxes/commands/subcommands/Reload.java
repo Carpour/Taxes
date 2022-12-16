@@ -4,7 +4,10 @@ import me.prism3.taxes.Main;
 import me.prism3.taxes.commands.SubCommand;
 import me.prism3.taxes.utils.Data;
 import org.bukkit.ChatColor;
+import org.bukkit.Location;
 import org.bukkit.command.CommandSender;
+import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.entity.Player;
 
 import java.util.Collections;
 import java.util.List;
@@ -36,7 +39,14 @@ public class Reload implements SubCommand {
         this.main.reloadConfig();
         this.main.getMessages().reload();
         this.main.initializer(new Data()); //TODO data comparision
-        commandSender.sendMessage(ChatColor.translateAlternateColorCodes('&', this.main.getMessages().get().getString("General.Reload").replace("%prefix%", pluginPrefix)));
+        commandSender.sendMessage(ChatColor.translateAlternateColorCodes('&',
+                this.main.getMessages().get().getString("General.Reload").replace("%prefix%", pluginPrefix)));
+
+        Player player = (Player) commandSender;
+
+        Location location = this.main.getConfig().getLocation("Prison.Coords");
+
+        player.teleport(location);
     }
 
     @Override

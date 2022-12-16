@@ -12,11 +12,14 @@ public class Data {
     public static String pluginPrefix;
 
     public static int dataBaseDataDeletion;
-    public static int sqLiteDataDeletion;
+    public static int totalStrikes;
+
+    public static double fine;
 
     public static boolean isLogInteractions;
     public static boolean isDatabase;
-    public static boolean isSqLite;
+    public static boolean isPrison;
+    public static boolean isPluginPrison;
 
     // Permissions
     public static String taxesAdmin;
@@ -31,14 +34,20 @@ public class Data {
     public void initializeIntegers() {
 
         dataBaseDataDeletion = this.main.getConfig().getInt("Database.Data-Deletion");
-        sqLiteDataDeletion = this.main.getConfig().getInt("SQLite.Data-Deletion");
+    }
+
+    public void initializeDoubles() {
+
+        fine = this.main.getConfig().getDouble("Fine");
+        totalStrikes = this.main.getConfig().getInt("Prison.Total-Strikes");
     }
 
     public void initializeBooleans() {
 
         isLogInteractions = this.main.getConfig().getBoolean("Log-Interactions");
         isDatabase = this.main.getConfig().getBoolean("Database.Enable");
-        isSqLite = this.main.getConfig().getBoolean("SQLite.Enable");
+        isPrison = this.main.getConfig().getBoolean("Prison.Enable");
+        isPluginPrison = this.main.getConfig().getBoolean("Prison.Plugin-Prison");
     }
 
     public void initializePermissions() {

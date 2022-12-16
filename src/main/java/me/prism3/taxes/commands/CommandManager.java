@@ -2,6 +2,8 @@ package me.prism3.taxes.commands;
 
 import me.prism3.taxes.Main;
 import me.prism3.taxes.commands.subcommands.Reload;
+import me.prism3.taxes.commands.subcommands.SetPrison;
+import me.prism3.taxes.commands.subcommands.TpPrison;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -9,7 +11,6 @@ import org.bukkit.command.TabExecutor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,6 +23,8 @@ public class CommandManager implements TabExecutor {
     public CommandManager() {
 
         this.subCommands.add(new Reload());
+        this.subCommands.add(new SetPrison());
+        this.subCommands.add(new TpPrison());
     }
 
     @Override
@@ -40,9 +43,7 @@ public class CommandManager implements TabExecutor {
         if (args.length > 0) {
             for (int i = 0; i < this.getSubCommands().size(); i++) {
                 if (args[0].equalsIgnoreCase(this.getSubCommands().get(i).getName())) {
-                    try {
-                        this.getSubCommands().get(i).perform(sender, args);
-                    } catch (final IOException e) { e.printStackTrace(); }
+                    this.getSubCommands().get(i).perform(sender, args);
                 }
             }
         }

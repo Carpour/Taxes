@@ -1,4 +1,4 @@
-package me.prism3.taxes.utils;
+package me.prism3.taxes.utils.files;
 
 import me.prism3.taxes.Main;
 import org.bukkit.Bukkit;

@@ -21,6 +21,43 @@ Plugin-Prefix: "&6Taxes &8&l|&r"
 # Log all Taxes Interactions
 Log-Interactions: true
 
+# All timings are in Minutes
+# First-Join: Time before the newly joined player to start paying bills
+# Interval: Time between each Taxes Collection
+# Prison: Time for the player to spend in Prison
+Time-Settings:
+  First-Join: 900
+  Interval: 3600
+  Prison: 600
+
+# Total-Strikes: How many strikes that the player need to have in order to be sent to Prison
+# Plugin-Prison: Allow the plugin to make a Prison Box for the player
+# Coords: The coords of the Prison where the player will be sent. Only works if Plugin-Prison is false
+Prison:
+  Enable: true
+  Total-Strikes: 3
+  Plugin-Prison: true
+  Coords:
+    World-Name:
+    X:
+    Y:
+    Z:
+
+# How much money should be taken from the player in the set Interval
+Fine: 5000.00
+
+# All restrictions that the user will have once in Prison. Only works if Prison Feature is Enabled
+Restrictions:
+  Prison:
+    Commands: true
+    Chat: true
+    Teleportation: true
+    Game-Mode: true
+  Effects:
+    Slowness: true
+    Blindness: true
+    Hunger: true
+
 # Database Settings
 # Data-Deletion Value in Days, Set it -1 to cancel
 Database:
@@ -30,10 +67,4 @@ Database:
   Username: username
   Password: PassworD
   Database: database
-  Data-Deletion: 7
-
-# SQLite Feature
-# Data-Deletion Value in Days, Set it -1 to cancel
-SQLite:
-  Enable: false
   Data-Deletion: 7

@@ -1,9 +1,10 @@
 package me.prism3.taxes;
 
+import me.prism3.taxes.events.PlayerJoin;
 import me.prism3.taxes.utils.Data;
-import me.prism3.taxes.utils.InteractionFile;
+import me.prism3.taxes.utils.files.Interactions;
 import me.prism3.taxes.utils.Log;
-import me.prism3.taxes.utils.Messages;
+import me.prism3.taxes.utils.files.Messages;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class Main extends JavaPlugin {
@@ -27,8 +28,10 @@ public final class Main extends JavaPlugin {
         this.messages.setup();
         this.messages.get().options().copyDefaults(true);
 
-        final InteractionFile interactionFile = new InteractionFile();
+        final Interactions interactionFile = new Interactions();
         interactionFile.createFile();
+
+        this.eventInitializer();
 
         Log.info("Loaded successfully");
     }
@@ -40,9 +43,14 @@ public final class Main extends JavaPlugin {
 
         data.initializeStrings();
         data.initializeIntegers();
+        data.initializeDoubles();
         data.initializeBooleans();
         data.initializePermissions();
         data.initializeCommands();
+    }
+    private void eventInitializer() {
+
+        this.getServer().getPluginManager().registerEvents(new PlayerJoin(), this);
     }
 
     public static Main getInstance() { return instance; }

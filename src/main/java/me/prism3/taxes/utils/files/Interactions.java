@@ -1,11 +1,12 @@
-package me.prism3.taxes.utils;
+package me.prism3.taxes.utils.files;
 
 import me.prism3.taxes.Main;
+import me.prism3.taxes.utils.Log;
 
 import java.io.File;
 import java.io.IOException;
 
-public class InteractionFile {
+public class Interactions {
 
     File interaction;
 
